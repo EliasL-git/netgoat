@@ -52,6 +52,22 @@ We recommend [datalix](https://datalix.eu/a/netgoat) for cheap and highly avalia
 
 https://docs.netgoat.xyz (not published yet)
 
+## Development
+
+To run all NetGoat services locally for development:
+
+```bash
+bun run services
+```
+
+This command starts all required services concurrently:
+- **Main NetGoat App** (ports 80/443/3333) - Reverse proxy engine
+- **LogDB** (port 3010) - Request logging service  
+- **CentralMonServer** (port 1933) - Stats monitoring server
+- **Frontend** (port 3000) - React/Next.js dashboard
+
+Each service runs in its own process with colored output for easy debugging.
+
 ## Open Source Projects That Helped me Build
 * [Bun](https://bun.sh) - [Github](https://github.com/oven-sh/bun) - MIT License
 

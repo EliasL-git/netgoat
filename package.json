@@ -52,12 +52,14 @@
   "module": "index.js",
   "version": "1.0.0",
   "scripts": {
-    "build:css": "npx @tailwindcss/cli -i assets/css/globals.css -o assets/css/tailwind.css --watch"
+    "build:css": "npx @tailwindcss/cli -i assets/css/globals.css -o assets/css/tailwind.css --watch",
+    "services": "concurrently --names \"Main,LogDB,CentralMon,Frontend\" --prefix-colors \"cyan,yellow,green,magenta\" \"bun run .\" \"cd LogDB && bun run .\" \"cd CentralMonServer && bun run .\" \"cd reactbased && bun run dev\""
   },
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "concurrently": "^9.2.0"
   },
   "peerDependencies": {
     "typescript": "^5"
